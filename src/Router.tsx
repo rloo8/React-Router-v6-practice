@@ -3,6 +3,9 @@ import App from "./App";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Author from "./pages/Author";
+import Book from "./pages/Book";
+import Chapters from "./pages/Chapters";
+import Characters from "./pages/Characters";
 
 const router = createBrowserRouter([
   {
@@ -20,6 +23,12 @@ const router = createBrowserRouter([
       {
         path: "author/:authorName",
         element: <Author />,
+        children: [
+          {
+            path: ":bookName",
+            element: <Book />,
+          },
+        ],
       },
     ],
   },

@@ -1,5 +1,5 @@
 import { authors } from "../db";
-import { Link, useParams } from "react-router-dom";
+import { Link, Outlet, useParams } from "react-router-dom";
 
 function Author() {
   const { authorName } = useParams();
@@ -12,11 +12,14 @@ function Author() {
       <h1>{authorName}</h1>
       {filteredAuthors.map((author) => (
         <ul key={author.id}>
-          {author.bookTitle.map((book, index) => (
-            <li key={index}>{book}</li>
+          {author.bookList.map((title, index) => (
+            <li key={index}>
+              <Link to={title}>{title}</Link>
+            </li>
           ))}
         </ul>
       ))}
+      <Outlet />
     </div>
   );
 }
