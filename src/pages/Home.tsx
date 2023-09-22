@@ -1,14 +1,14 @@
-import { authors } from "../db";
-import { Link } from "react-router-dom";
+import { users } from "../db";
+import { Link, useSearchParams } from "react-router-dom";
 
 function Home() {
   return (
     <div>
-      <h1>Best Seller Authors</h1>
+      <h1>User</h1>
       <ul>
-        {authors.map((author) => (
-          <li key={author.id}>
-            <Link to={`/author/${author.name}`}>{author.name}</Link>
+        {users.map((user) => (
+          <li key={user.id}>
+            <Link to={`/users/${user.id}`}>{user.name}</Link>
           </li>
         ))}
       </ul>

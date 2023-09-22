@@ -1,16 +1,15 @@
-import { createBrowserRouter } from "react-router-dom";
-import App from "./App";
+import { createBrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import About from "./pages/About";
-import Author from "./pages/Author";
-import Book from "./pages/Book";
-import Chapters from "./pages/Chapters";
-import Characters from "./pages/Characters";
+import Root from "./Root";
+import NotFound from "./pages/NotFound";
+import User from "./pages/User";
+import Followers from "./pages/Followers";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <App />,
+    element: <Root />,
     children: [
       {
         path: "",
@@ -21,16 +20,17 @@ const router = createBrowserRouter([
         element: <About />,
       },
       {
-        path: "author/:authorName",
-        element: <Author />,
+        path: "users/:userId",
+        element: <User />,
         children: [
           {
-            path: ":bookName",
-            element: <Book />,
+            path: "followers",
+            element: <Followers />,
           },
         ],
       },
     ],
+    errorElement: <NotFound />,
   },
 ]);
 

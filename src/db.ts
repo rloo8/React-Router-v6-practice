@@ -1,12 +1,10 @@
-export const authors = [
+export const users = [
   {
     id: 1,
-    name: "J.K.Rowling",
-    bookList: ["RowlingⅠ", "RowlingⅡ"],
+    name: "yon",
   },
   {
     id: 2,
-    name: "J.R.R.Tolkien",
-    bookList: ["TolkienⅠ", "TolkienⅡ"],
+    name: "koya",
   },
 ];
